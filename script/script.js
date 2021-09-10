@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             if (numberQuestion === questions.length) {
                 nextButton.classList.add('d-none');
-                prevButton.classList.add('d-none');
+
                 questionTitle.textContent = 'Заполните форму ниже'
                 sendButton.classList.remove('d-none');
                 formAnswers.innerHTML = `
@@ -146,7 +146,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (numberQuestion === questions.length + 1) {
                 formAnswers.textContent = 'Спасибо за пройденный тест';
-                questionTitle.textContent = 'Менеджер свяжется с вами в течение суток'
+                questionTitle.textContent = 'Менеджер свяжется с вами в течение суток';
+                sendButton.classList.add('d-none');
+                prevButton.classList.add('d-none');
                 setTimeout(() => {
                     modalBlock.classList.remove('d-block')
                 }, 2000)
